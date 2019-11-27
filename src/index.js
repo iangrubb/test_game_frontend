@@ -9,6 +9,8 @@ import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './redux/reducers'
 import thunk from 'redux-thunk'
 
+import { ActionCableProvider} from 'react-actioncable-provider'
+
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
@@ -16,7 +18,9 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <ActionCableProvider url="ws://localhost:3000/cable">
+            <App />
+        </ActionCableProvider>
     </Provider>
 , document.getElementById('root'));
 

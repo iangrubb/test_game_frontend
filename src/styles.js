@@ -22,3 +22,11 @@ export const BigText = styled.div`
     text-shadow: 1px 1px 1px #3B3849;
 
 `
+
+export const SmallText = styled.div`
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4 em;
+    color: #4E4960;
+
+`

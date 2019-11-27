@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { Box, BigText } from '../styles'
 
+import { login } from '../redux/actions'
+
 
 
 const Login = props => {
@@ -22,7 +24,7 @@ const Login = props => {
             <Title>You're <i>not</i> logged in!</Title>
             <Form onSubmit={handleSubmit}>
                 <Input onChange={handleChange} type="text" placeholder="Who are you?" value={name}></Input>
-                <Button type="submit"/>
+                <Button type="submit" value="login"/>
             </Form>
 
         </Container>
@@ -118,7 +120,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        login: name => dispatch({type: "LOGIN", payload: name})
+        login: name => login(name)(dispatch)
     }
 }
 
